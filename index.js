@@ -26,6 +26,7 @@ cookie = {
 const keystone = new Keystone({
   adapter: new Adapter(adapterConfig),
   cookie: cookie,
+  cookieSecret: 'ZhdhZPh5XYD7iJxRCmsbzSaW98BdgsFc'
 });
 
 const cldFileAdapter = new CloudinaryAdapter({
