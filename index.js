@@ -35,31 +35,21 @@ const cldFileAdapter = new CloudinaryAdapter({
   folder: 'drug_data',
 });
 
-keystone.createList('User', {
-  fields: {
-    username: { type: Text },
-    password: { type: Password },
-  },
-});
+// keystone.createList('User', {
+//   fields: {
+//     username: { type: Text },
+//     password: { type: Password },
+//   },
+// });
 
-const authStrategy = keystone.createAuthStrategy({
-  type: PasswordAuthStrategy,
-  list: 'User',
-  config: {
-    identityField: 'username',
-    secretField: 'password',
-  },
-});
-
-
-
-keystone.createList('Todo', {
-  schemaDoc: 'A list of things which need to be done',
-  fields: {
-    name: { type: Text, schemaDoc: 'This is the thing you need to do' },
-    description: { type: Text, schemaDoc: 'This is the thing you need to do' },
-  },
-});
+// const authStrategy = keystone.createAuthStrategy({
+//   type: PasswordAuthStrategy,
+//   list: 'User',
+//   config: {
+//     identityField: 'username',
+//     secretField: 'password',
+//   },
+// });
 
 keystone.createList('Brand', {
   schemaDoc: 'Brand details',
@@ -101,7 +91,7 @@ keystone.createList('ProductMedicine', {
 });
 
 keystone.createList('ProductMedicineListing', {
-  schemaDoc: 'Listing',
+  schemaDoc: 'Medicine Listing',
   fields: {
     country: { type: Text, schemaDoc: 'Country of Origin' },
     package_size: { type: Float, schemaDoc: 'Package Size' },
@@ -117,7 +107,7 @@ keystone.createList('ProductMedicineListing', {
 
 
 keystone.createList('ProductInstrumentListing', {
-  schemaDoc: 'Listing',
+  schemaDoc: 'Instrument Listing',
   fields: {
     country: { type: Text, schemaDoc: 'Country of Origin' },
     manufacturer: { type: Relationship, ref: 'Manufacturer', schemaDoc: 'Manufacturer of this Instrument' },
@@ -245,11 +235,12 @@ keystone.createList('Clinical', {
   fields: {
     name: { type: Text, schemaDoc: 'How generally call this desease?' },
     sub_clinical: { type: Relationship, ref: 'SubClinical', many: true, schemaDoc: 'How generally call this desease?' },
-    image: {
+    uimage: {
       type: Unsplash,
       accessKey: UNSPLASH_accessKey,
       secretKey: UNSPLASH_secretKey,
     },
+    cimage: { type: CloudinaryImage, adapter: cldFileAdapter },
     description: {
       type: Content,
       blocks: [
@@ -299,13 +290,13 @@ keystone.createList('Manufacturer', {
   },
 });
 
-keystone.createList('Order', {
-  schemaDoc: 'Order Details',
-  fields: {
-    name: { type: Text, schemaDoc: 'Single Order' },
-    isEnabled: { type: Checkbox, isRequired: true },
-  },
-});
+// keystone.createList('Order', {
+//   schemaDoc: 'Order Details',
+//   fields: {
+//     name: { type: Text, schemaDoc: 'Single Order' },
+//     isEnabled: { type: Checkbox, isRequired: true },
+//   },
+// });
 
 module.exports = {
   keystone,
