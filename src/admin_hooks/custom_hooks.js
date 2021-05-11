@@ -1,7 +1,4 @@
 export default {
-    logo: () => <div>
-        PillpackLk
-    </div>,
     pages: () => [
         // Ordering existing list pages
         {
