@@ -26,5 +26,11 @@ export default {
                 { listKey: 'Type' },
             ],
         },
+        {
+            label: 'Doctor Management',
+            children: [
+                { listKey: 'DoctorCategory'},
+            ],
+        },
     ],
 };

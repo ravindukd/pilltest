@@ -290,6 +290,7 @@ const keystone = new Keystone({
 
 // Access control functions
 const userIsAdmin = ({ authentication: { item: user } }) => Boolean(user && user.isAdmin);
+const userIsDrugAdmin = ({ authentication: { item: user } }) => Boolean(user && user.userIsDrugAdmin);
 const userOwnsItem = ({ authentication: { item: user } }) => {
   if (!user) {
     return false;
@@ -306,7 +307,7 @@ const userIsAdminOrOwner = auth => {
   return isAdmin ? isAdmin : isOwner;
 };
 
-const access = { userIsAdmin, userOwnsItem, userIsAdminOrOwner };
+const access = { userIsAdmin, userOwnsItem, userIsAdminOrOwner, userIsDrugAdmin };
 
 keystone.createList('User', {
   fields: {
@@ -656,6 +657,42 @@ keystone.createList('Manufacturer', {
   },
   access: {
     read: access.userIsAdminOrOwner,
+    update: access.userIsDrugAdmin,
+    create: access.userIsDrugAdmin,
+    delete: access.userIsDrugAdmin,
+    auth: true,
+  },
+});
+
+
+keystone.createList('DoctorCategory', {
+  schemaDoc: 'Doctor Categories',
+  fields: {
+    name: { type: Text, schemaDoc: 'How generally call this Category?' },
+    image: { type: CloudinaryImage, adapter: cldFileAdapter },
+    description: {
+      type: Content,
+      blocks: [
+        Content.blocks.heading,
+        [
+          Unsplash.blocks.unsplashImage,
+          {
+            attribution: 'KeystoneJS',
+            accessKey: UNSPLASH_accessKey,
+            secretKey: UNSPLASH_secretKey,
+          },
+        ],
+        [CloudinaryImage.blocks.image, { adapter: cldFileAdapter }],
+        Content.blocks.blockquote,
+        Content.blocks.link,
+        Content.blocks.orderedList,
+        Content.blocks.unorderedList,
+      ],
+      schemaDoc: 'Description about this clinical desease'
+    },
+  },
+  access: {
+    read: access.userIsAdminOrOwner,
     update: access.userIsAdminOrOwner,
     create: access.userIsAdmin,
     delete: access.userIsAdmin,
@@ -675,7 +712,7 @@ module.exports = {
   apps: [
     new GraphQLApp(),
     new AdminUIApp({
-      hooks: require.resolve('./src/admin_hooks/custom_hooks'),
+      hooks: (access.userIsDrugAdmin) ? require.resolve('./src/admin_hooks/drug_hooks'):require.resolve('./src/admin_hooks/custom_hooks'),
       name: PROJECT_NAME,
       enableDefaultRoute: true,
       authStrategy,
