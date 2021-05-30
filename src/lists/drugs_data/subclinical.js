@@ -46,7 +46,8 @@ module.exports = {
     },
     clinical: { 
       type: Relationship, 
-      ref: 'Clinical', 
+      ref: 'Clinical',
+      many: true, 
       schemaDoc: 'The Clinical Desease of this Sub Clinical Desease',
       adminDoc: 'The Clinical Desease of this Sub Clinical Desease'
     },
