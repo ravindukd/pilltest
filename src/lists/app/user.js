@@ -16,6 +16,24 @@ module.exports = {
         update: utils.access.userIsAdmin,
       },
     },
+    isDrugAdmin: {
+      type: Checkbox,
+      access: {
+        update: utils.access.userIsAdmin,
+      },
+    },
+    isDoctor: {
+      type: Checkbox,
+      access: {
+        update: utils.access.userIsAdmin,
+      },
+    },
+    isPatient: {
+      type: Checkbox,
+      access: {
+        update: utils.access.userIsAdmin,
+      },
+    },
     password: {
       type: Password,
     },

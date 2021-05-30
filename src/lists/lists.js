@@ -12,6 +12,8 @@ const medicine_listing = require('./pharma/products/medicine_listing')
 const brands = require('./drugs_data/brands')
 const user = require('./app/user')
 const doctor_cat = require('./doctors/doctor_cat')
+const cart = require('./pharma/cart')
+const orders = require('./pharma/orders')
 
 module.exports = {
   app: {
@@ -33,6 +35,10 @@ module.exports = {
       instrument:p_instrument,
       instrument_listing: instrument_listing,
       medicine_listing: medicine_listing
+    },
+    selling: {
+      cart:cart,
+      orders:orders
     }
   },
   users:{

@@ -32,6 +32,8 @@ keystone.createList('ProductMedicine', pl.products.medicine);
 keystone.createList('ProductInstrument', pl.products.instrument);
 keystone.createList('ProductMedicineListing', pl.products.medicine_listing);
 keystone.createList('ProductInstrumentListing', pl.products.instrument_listing);
+keystone.createList('Cart', pl.selling.cart);
+keystone.createList('Order', pl.selling.orders);
 
 const ddl = lists.drug_data;
 keystone.createList('Instrument', ddl.instruments);
@@ -43,7 +45,11 @@ keystone.createList('Manufacturer', ddl.manufacturer);
 keystone.createList('Type', ddl.types);
 keystone.createList('Timing', ddl.timing);
 
+
+
 keystone.createList('DoctorCategory', lists.users.doctors.categories);
+
+
 
 const authStrategy = keystone.createAuthStrategy({
   type: PasswordAuthStrategy,

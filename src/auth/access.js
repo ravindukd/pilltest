@@ -1,5 +1,5 @@
 const userIsAdmin = ({ authentication: { item: user } }) => Boolean(user && user.isAdmin);
-const userIsDrugAdmin = ({ authentication: { item: user } }) => Boolean(user && user.userIsDrugAdmin || user && user.isAdmin);
+const userIsDrugAdmin = ({ authentication: { item: user } }) => Boolean(user && (user.userIsDrugAdmin || user && user.isAdmin));
 const userOwnsItem = ({ authentication: { item: user } }) => {
   if (!user) {
     return false;
@@ -10,7 +10,7 @@ const userOwnsItem = ({ authentication: { item: user } }) => {
   return { id: user.id };
 };
 
-const access = {userIsAdmin,userOwnsItem,userIsDrugAdmin}
+const access = { userIsAdmin, userOwnsItem, userIsDrugAdmin }
 
 const userIsAdminOrOwner = auth => {
   const isAdmin = access.userIsAdmin(auth);
@@ -18,4 +18,4 @@ const userIsAdminOrOwner = auth => {
   return isAdmin ? isAdmin : isOwner;
 };
 
-module.exports =  { userIsAdmin, userOwnsItem, userIsAdminOrOwner, userIsDrugAdmin };
+module.exports = { userIsAdmin, userOwnsItem, userIsAdminOrOwner, userIsDrugAdmin };

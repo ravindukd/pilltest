@@ -28,6 +28,7 @@
     "@keystonejs/fields-wysiwyg-tinymce": "^5.4.1",
     "@keystonejs/file-adapters": "^7.1.1",
     "@keystonejs/keystone": "^19.3.2",
+    "@keystonejs/list-plugins": "^8.1.2",
     "connect-mongo": "^4.4.1",
     "cross-env": "^7.0.3",
     "express-session": "^1.17.1"

@@ -1,4 +1,3 @@
-
 const { Text, Relationship, Float,Select } = require('@keystonejs/fields');
 const { CloudinaryImage } = require('@keystonejs/fields-cloudinary-image');
 const utils = require('../../utils/utils')
