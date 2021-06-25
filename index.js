@@ -49,9 +49,7 @@ keystone.createList('Timing', ddl.timing);
 
 keystone.createList('DoctorCategory', lists.users.doctors.categories);
 
-keystone.set('cors allow origin', true);
-keystone.get('cors allow methods', true)
-keystone.get('cors allow methods', headers)
+
 
 const authStrategy = keystone.createAuthStrategy({
   type: PasswordAuthStrategy,

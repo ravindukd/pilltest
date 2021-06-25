@@ -30,6 +30,7 @@
     "@keystonejs/keystone": "^19.3.2",
     "@keystonejs/list-plugins": "^8.1.2",
     "connect-mongo": "^4.4.1",
+    "cors": "^2.8.5",
     "cross-env": "^7.0.3",
     "express-session": "^1.17.1"
   }
