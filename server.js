@@ -10,5 +10,6 @@ keystone
   .then(async ({ middlewares }) => {
     await keystone.connect();
     const app = express();
+    app.use(middlewares)
     app.use(cors()).listen(80);
   });
