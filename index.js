@@ -71,8 +71,11 @@ module.exports = {
   ],
 };
 
-exports.setCors = function (req,res,next) {
-  res.header('Access-Control-Allow-Origin', '*.*');
-  res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
-  res.header('Access-Control-Allow-Headers', 'Content-Type');
-}
+module.exports = {
+  configureExpress: app => {
+    app.set('cors allow origin', true);
+    app.set('cors allow methods', true);
+    app.set('cors allow headers', true);
+  },
+};
+
