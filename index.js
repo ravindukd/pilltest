@@ -70,12 +70,3 @@ module.exports = {
     }),
   ],
 };
-
-module.exports = {
-  configureExpress: app => {
-    app.set('cors allow origin', true);
-    app.set('cors allow methods', true);
-    app.set('cors allow headers', true);
-  },
-};
-
