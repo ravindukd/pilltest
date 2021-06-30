@@ -12,8 +12,8 @@
   },
   "scripts": {
     "dev": "cross-env NODE_ENV=development DISABLE_LOGGING=true keystone dev",
-    "build": "cross-env NODE_ENV=production keystone build",
-    "start": "node server.js",
+    "build": "cross-env NODE_ENV=production keystone build mv build ./dist",
+    "start": "cross-env PORT=80 NODE_ENV=production keystone start",
     "create-tables": "cross-env CREATE_TABLES=true keystone create-tables"
   },
   "dependencies": {
