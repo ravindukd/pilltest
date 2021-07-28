@@ -26,6 +26,11 @@ module.exports = {
       schemaDoc: 'Display Image for this Disease',
       adminDoc: 'Upload image from your computer',
     },
+    desc: {
+      type: Wysiwyg,
+      schemaDoc: 'Description about this clinical Disease',
+      adminDoc: 'Description about this clinical Disease'
+    },
     description: {
       type: Content,
       blocks: [

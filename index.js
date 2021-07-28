@@ -27,6 +27,7 @@ const access = require('./src/auth/access');
 const lists = require('./src/lists/lists');
 
 keystone.createList('User', lists.app.user);
+keystone.createList('Info', lists.app.info);
 
 const pl = lists.pharma
 keystone.createList('ProductMedicine', pl.products.medicine);
