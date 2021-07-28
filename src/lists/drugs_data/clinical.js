@@ -2,6 +2,7 @@ const { Text, Select } = require('@keystonejs/fields');
 const { Unsplash } = require('@keystonejs/fields-unsplash');
 const { CloudinaryImage } = require('@keystonejs/fields-cloudinary-image');
 const { Content } = require('@keystonejs/fields-content');
+const { Wysiwyg } = require('@keystonejs/fields-wysiwyg-tinymce');
 
 const utils = require('../utils/utils')
 
