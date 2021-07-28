@@ -26,5 +26,11 @@ export default {
               { listKey: 'Type' },
           ],
       },
+      {
+          label: 'Public Infomation',
+          children: [
+              { listKey: 'Info' },
+          ],
+      },
   ],
 };
