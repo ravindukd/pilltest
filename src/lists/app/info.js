@@ -79,10 +79,9 @@ module.exports = {
   },
   // List-level access controls
   access: {
-    read: utils.access.userIsAdminOrOwner,
+    read: true,
     update: utils.access.userIsAdminOrOwner,
     create: utils.access.userIsAdmin,
     delete: utils.access.userIsAdmin,
-    auth: false,
   },
 }
