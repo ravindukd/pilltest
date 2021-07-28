@@ -3,6 +3,8 @@ const utils = require('../utils/utils')
 const { Wysiwyg } = require('@keystonejs/fields-wysiwyg-tinymce');
 
 module.exports = {
+  schemaDoc:'Website Info',
+  adminDoc:'Website Info',
   fields: {
     about_us: {
       type: Wysiwyg,
@@ -77,11 +79,10 @@ module.exports = {
       isRequired: true
     },
   },
-  // List-level access controls
   access: {
     read: true,
-    update: utils.access.userIsAdminOrOwner,
-    create: utils.access.userIsAdmin,
-    delete: utils.access.userIsAdmin,
+    update: utils.access.userIsDrugAdmin,
+    create: utils.access.userIsDrugAdmin,
+    delete: utils.access.userIsDrugAdmin,
   },
 }
