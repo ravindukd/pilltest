@@ -6,25 +6,25 @@ module.exports = {
   schemaDoc:'Website Info',
   adminDoc:'Website Info',
   fields: {
-    about_us: {
+    aboutUs: {
       type: Wysiwyg,
       schemaDoc: 'About Us information to be displayed',
       adminDoc: 'About Us information to be displayed',
       isRequired: true
     },
-    privacy_policy: {
+    privacyPolicy: {
       type: Wysiwyg,
       schemaDoc: 'Privacy Policy to be displayed',
       adminDoc: 'Privacy Policy to be displayed',
       isRequired: true
     },
-    payment_policy: {
+    paymentPolicy: {
       type: Wysiwyg,
       schemaDoc: 'Payment Policy to be displayed',
       adminDoc: 'Payment Policy to be displayed',
       isRequired: true
     },
-    refund_policy: {
+    refundPolicy: {
       type: Wysiwyg,
       schemaDoc: 'Refund Policy to be displayed',
       adminDoc: 'Refund Policy to be displayed',
@@ -36,43 +36,43 @@ module.exports = {
       adminDoc: 'Terms to be displayed',
       isRequired: true
     },
-    facebook_url: {
+    facebookUrl: {
       type: Text,
       schemaDoc: 'Social Links - Facebook',
       adminDoc: 'Social Links - Facebook',
       isRequired: true
     },
-    twitter_url: {
+    twitterUrl: {
       type: Text,
       schemaDoc: 'Social Links - twitter',
       adminDoc: 'Social Links - twitter',
       isRequired: true
     },
-    instagram_url: {
+    instagramUrl: {
       type: Text,
       schemaDoc: 'Social Links - instagram',
       adminDoc: 'Social Links - instagram',
       isRequired: true
     },
-    google_business_url: {
+    google_businessUrl: {
       type: Text,
       schemaDoc: 'Social Links - google_business',
       adminDoc: 'Social Links - google_business',
       isRequired: true
     },
-    public_email_address: {
+    public_emailAddress: {
       type: Text,
       schemaDoc: 'Public Contact Details - Email',
       adminDoc: 'Public Contact Details - Email',
       isRequired: true
     },
-    public_contact_number: {
+    public_contactNumber: {
       type: Text,
       schemaDoc: 'Public Contact Details - Phone Number',
       adminDoc: 'Public Contact Details - Phone Number',
       isRequired: true
     },
-    public_address: {
+    publicAddress: {
       type: Text,
       schemaDoc: 'Public Contact Details - Address',
       adminDoc: 'Public Contact Details - Address',
