@@ -19,12 +19,18 @@ module.exports = {
     brand: {
       type: Relationship,
       ref: 'Brand',
-      schemaDoc: 'Brand of this medicine'
+      schemaDoc: 'Brand of this instrument'
+    },
+    instrument: {
+      type: Relationship,
+      ref: 'Instrument',
+      schemaDoc: 'Instrument Information Relationship',
+      adminDoc: 'Instrument information relation ship. Select the instrument Data relevent to this product.'
     },
     type: {
       type: Relationship,
       ref: 'Type',
-      schemaDoc: 'Brand of this medicine'
+      schemaDoc: 'Brand of this instrument'
     },
     isOTC: {
       type: Checkbox,
@@ -34,7 +40,7 @@ module.exports = {
       type: Relationship,
       ref: 'ProductInstrumentListing',
       many: true,
-      schemaDoc: 'Listings of this medicine',
+      schemaDoc: 'Listings of this instrument',
       adminDoc: ''
     },
   },

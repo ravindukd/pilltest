@@ -1,4 +1,5 @@
 const { Text, Relationship, Checkbox, Slug } = require('@keystonejs/fields');
+const { adminDoc } = require('../../app/info');
 const utils = require('../../utils/utils')
 
 module.exports = {
@@ -21,6 +22,12 @@ module.exports = {
       type: Relationship,
       ref: 'Brand',
       schemaDoc: 'Brand of this medicine'
+    },
+    medicine: {
+      type: Relationship,
+      ref: 'Medicine',
+      schemaDoc: 'Medicine Information Relationship',
+      adminDoc: 'Medicine information relation ship. Select the Medicine Data relevent to this product.'
     },
     type: {
       type: Relationship,
