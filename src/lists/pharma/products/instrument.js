@@ -1,4 +1,4 @@
-const { Text, Relationship,Checkbox } = require('@keystonejs/fields');
+const { Text, Relationship,Checkbox, Slug } = require('@keystonejs/fields');
 const utils = require('../../utils/utils')
 
 module.exports = {
@@ -7,6 +7,13 @@ module.exports = {
     name: {
       type: Text,
       schemaDoc: 'The name of the Instrument',
+      isRequired: true
+    },
+    slug: {
+      type: Slug, 
+      from: 'name',
+      schemaDoc: 'Url Segment to be displayed',
+      adminDoc: 'Url Segment to be displayed',
       isRequired: true
     },
     brand: {

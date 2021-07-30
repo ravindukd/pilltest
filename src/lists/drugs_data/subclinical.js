@@ -1,4 +1,4 @@
-const { Text, Relationship } = require('@keystonejs/fields');
+const { Text, Relationship, Slug } = require('@keystonejs/fields');
 const { Wysiwyg } = require('@keystonejs/fields-wysiwyg-tinymce');
 const { CloudinaryImage } = require('@keystonejs/fields-cloudinary-image');
 
@@ -11,6 +11,13 @@ module.exports = {
     name: { 
       type: Text, 
       schemaDoc: 'How generally call this desease?' ,
+      isRequired: true
+    },
+    slug: {
+      type: Slug, 
+      from: 'name',
+      schemaDoc: 'Url Segment to be displayed',
+      adminDoc: 'Url Segment to be displayed',
       isRequired: true
     },
     description: {

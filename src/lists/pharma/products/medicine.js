@@ -1,32 +1,40 @@
-const { Text, Relationship,Checkbox } = require('@keystonejs/fields');
+const { Text, Relationship, Checkbox, Slug } = require('@keystonejs/fields');
 const utils = require('../../utils/utils')
 
-module.exports =  {
+module.exports = {
   schemaDoc: 'Medicine',
   fields: {
-    name: { type: 
-      Text, 
-      schemaDoc: 'The name of the Instrument', 
+    name: {
+      type:
+        Text,
+      schemaDoc: 'The name of the Instrument',
       isRequired: true
     },
-    brand: { 
-      type: Relationship, 
-      ref: 'Brand', 
-      schemaDoc: 'Brand of this medicine' 
+    slug: {
+      type: Slug, 
+      from: 'name',
+      schemaDoc: 'Url Segment to be displayed',
+      adminDoc: 'Url Segment to be displayed',
+      isRequired: true
     },
-    type: { 
-      type: Relationship, 
-      ref: 'Type', 
+    brand: {
+      type: Relationship,
+      ref: 'Brand',
       schemaDoc: 'Brand of this medicine'
     },
-    isOTC: { 
-      type: Checkbox, 
+    type: {
+      type: Relationship,
+      ref: 'Type',
+      schemaDoc: 'Brand of this medicine'
+    },
+    isOTC: {
+      type: Checkbox,
       isRequired: true
     },
-    listing: { 
+    listing: {
       type: Relationship,
-      ref: 'ProductMedicineListing', 
-      many: true, 
+      ref: 'ProductMedicineListing',
+      many: true,
       schemaDoc: 'Listings of this medicine'
     },
   },

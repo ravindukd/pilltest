@@ -1,4 +1,4 @@
-const { Text, Select } = require('@keystonejs/fields');
+const { Text, Select, Slug } = require('@keystonejs/fields');
 const { CloudinaryImage } = require('@keystonejs/fields-cloudinary-image');
 const { Content } = require('@keystonejs/fields-content');
 
@@ -11,6 +11,13 @@ module.exports = {
       type: Text,
       schemaDoc: 'The name of the type',
       adminDoc: 'The name of the type',
+      isRequired: true
+    },
+    slug: {
+      type: Slug, 
+      from: 'name',
+      schemaDoc: 'Url Segment to be displayed',
+      adminDoc: 'Url Segment to be displayed',
       isRequired: true
     },
     unit: {
