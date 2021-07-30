@@ -1,4 +1,4 @@
-const { Text } = require('@keystonejs/fields');
+const { Text, Float } = require('@keystonejs/fields');
 
 const utils = require('../utils/utils')
 
@@ -15,6 +15,11 @@ module.exports = {
       type: Text, 
       schemaDoc: 'How system should identify this timing?' ,
       adminDoc: 'How system should identify this timing?' 
+    },
+    totalPerDay: {
+      type: Float, 
+      schemaDoc: 'Amount that should be used for calculations' ,
+      adminDoc: 'Amount that should be used for calculations' 
     },
     description: {
       type: Text,
