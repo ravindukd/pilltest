@@ -30,9 +30,15 @@ module.exports = {
       type: Float, 
       schemaDoc: 'Price' 
     },
-    stock: { 
+    discount: { 
       type: Float, 
-      schemaDoc: 'Stock' 
+      schemaDoc: 'Discount' 
+    },
+    stock: { 
+      type: 
+      Float, 
+      schemaDoc: 'Stock',
+      adminDoc:'Set this to 0 to mark as OUT OF STOCK'
     },
     image: { 
       type: CloudinaryImage, 

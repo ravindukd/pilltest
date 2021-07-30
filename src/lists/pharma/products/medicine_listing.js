@@ -1,5 +1,6 @@
 const { Text, Relationship, Float,Select } = require('@keystonejs/fields');
 const { CloudinaryImage } = require('@keystonejs/fields-cloudinary-image');
+const { adminDoc } = require('../../app/info');
 const utils = require('../../utils/utils')
 
 module.exports = {
@@ -27,10 +28,15 @@ module.exports = {
       type: Float, 
       schemaDoc: 'Price' 
     },
+    discount: { 
+      type: Float, 
+      schemaDoc: 'Discount' 
+    },
     stock: { 
       type: 
       Float, 
-      schemaDoc: 'Stock' 
+      schemaDoc: 'Stock',
+      adminDoc:'Set this to 0 to mark as OUT OF STOCK'
     },
     image: { 
       type: CloudinaryImage, 
