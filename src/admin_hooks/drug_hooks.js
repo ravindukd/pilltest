@@ -30,6 +30,7 @@ export default {
           label: 'Public Infomation',
           children: [
               { listKey: 'Info' },
+              { listKey: 'Charge' },
           ],
       },
   ],
