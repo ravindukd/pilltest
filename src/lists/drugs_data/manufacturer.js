@@ -1,6 +1,7 @@
 const { Text, Select, Slug } = require('@keystonejs/fields');
 const { CloudinaryImage } = require('@keystonejs/fields-cloudinary-image');
 const { Content } = require('@keystonejs/fields-content');
+const { Wysiwyg } = require('@keystonejs/fields-wysiwyg-tinymce');
 
 const utils = require('../utils/utils')
 
@@ -21,7 +22,7 @@ module.exports = {
       isRequired: true
     },
     description: {
-      type: Content,
+      type: Wysiwyg,
       schemaDoc: 'Description about this Manufacturer',
       adminDoc: 'Description about this Manufacturer',
       isRequired: true
