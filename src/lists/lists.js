@@ -15,11 +15,13 @@ const info = require('./app/info')
 const doctor_cat = require('./doctors/doctor_cat')
 const cart = require('./pharma/cart')
 const orders = require('./pharma/orders')
+const charges = require('./app/charges')
 
 module.exports = {
   app: {
     user:user,
-    info:info
+    info:info,
+    charges:charges
   },
   drug_data: {
     instruments: instrument,
