@@ -28,7 +28,7 @@ const lists = require('./src/lists/lists');
 
 keystone.createList('User', lists.app.user);
 keystone.createList('Info', lists.app.info);
-keystone.createList('Charges', lists.app.charges);
+keystone.createList('Charge', lists.app.charges);
 
 const pl = lists.pharma
 keystone.createList('ProductMedicine', pl.products.medicine);
