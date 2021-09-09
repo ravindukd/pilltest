@@ -55,7 +55,7 @@ module.exports = {
   },
   access: {
     read: true,
-    update: utils.access.userIsAdminOrOwner,
+    update: true,
     create: utils.access.userIsAdmin,
     delete: utils.access.userIsAdmin,
   },
