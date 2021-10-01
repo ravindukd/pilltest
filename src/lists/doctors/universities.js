@@ -5,30 +5,19 @@ const { Wysiwyg } = require('@keystonejs/fields-wysiwyg-tinymce');
 const utils = require('../utils/utils')
 
 module.exports = {
-  schemaDoc: 'Doctor Categories',
+  schemaDoc: 'Universities',
   fields: {
     name: { 
       type: Text, 
-      schemaDoc: 'How generally call this Category?',
-      adminDoc: 'How generally call this Category?',
+      schemaDoc: 'How generally call this University?',
+      adminDoc: 'How generally call this University?',
       isRequired: true,
     },
     slug: {
-      type: Slug, 
+      type: Slug,
       from: 'name',
       schemaDoc: 'Url Segment to be displayed',
       adminDoc: 'Url Segment to be displayed',
-      isRequired: true
-    },
-    image: { 
-      type: CloudinaryImage, 
-      adapter: utils.cldFileAdapter,
-      adminDoc: 'Upload image from your computer',
-    },
-    description: {
-      type: Wysiwyg,
-      schemaDoc: 'Description about this category',
-      adminDoc: 'Description about this category',
       isRequired: true
     },
   },
