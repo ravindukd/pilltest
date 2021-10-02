@@ -1,4 +1,4 @@
-const { Text, Relationship } = require('@keystonejs/fields');
+const { Text, Relationship,Slug } = require('@keystonejs/fields');
 const { CloudinaryImage } = require('@keystonejs/fields-cloudinary-image');
 const { Wysiwyg } = require('@keystonejs/fields-wysiwyg-tinymce');
 
