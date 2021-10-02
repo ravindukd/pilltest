@@ -52,6 +52,10 @@ keystone.createList('Timing', ddl.timing);
 
 
 keystone.createList('DoctorCategory', lists.users.doctors.categories);
+keystone.createList('University', lists.others.universities);
+keystone.createList('District', lists.others.districts);
+keystone.createList('MohArea', lists.others.mohArea);
+keystone.createList('HospitalPost', lists.others.hospitalPost);
 
 
 

@@ -17,6 +17,10 @@ const cart = require('./pharma/cart')
 const orders = require('./pharma/orders')
 const charges = require('./app/charges')
 const faq = require('./app/faq')
+const uni = require('./doctors/universities')
+const districts = require('./doctors/districts')
+const hospitalPost = require('./doctors/hospitalPosts')
+const mohArea = require('./doctors/mohArea')
 
 module.exports = {
   app: {
@@ -51,5 +55,11 @@ module.exports = {
     doctors:{
       categories:doctor_cat
     }
+  },
+  others:{
+    universities:uni,
+    districts:districts,
+    mohArea:mohArea,
+    hospitalPost:hospitalPost
   }
 }
